@@ -4,13 +4,13 @@ import data from './data/athletes/athletes.js';
 
 const atletas = data.athletes //filtra atletas dentro do array
 
-
 //menu esportes:
 const esportes = atletas.map(modalidades => modalidades.sport) //filtra modalidade esportes dentro do array atletas
 const esportesFiltrados = new Set()  //filtra os esportes repetidos
 esportes.forEach((esporte) => {
     esportesFiltrados.add(esporte) 
 })
+
 const esportesMenuArray = [...esportesFiltrados].sort() //converte 'seet' em array e coloca em ordem alfabetica
 
 const esportesMenu = esportesMenuArray.map(esporte => `<option value="" selected disabled hidden>Esportes</option>
@@ -48,5 +48,30 @@ const modalidadesMenuArray = [...modalidadesFiltradas].sort() //converte o 'seet
 const modalidadesMenu = modalidadesMenuArray.map(modalid => `<option value="" selected disabled hidden>Categorias</option>
 <option value="${modalid}">${modalid}</option> ` ) //laço que concatena cada variável dentro do html
 
+
 const selecionarCategoria = document.querySelector(".selecionar-categoria")// variável que linka com html
 selecionarCategoria.innerHTML = modalidadesMenu // joga variável para o html
+
+//criando cards 
+
+const itensAraay = atletas.map (item => `
+    
+    <div class = "cards">
+        <ul class="textoCards" style="listaStyle: none">
+        <li>Nome: ${item.name}</li>
+        <li>Gênero: ${item.gender}</li>
+        <li>Altura: ${item.height}</li>
+        <li>Peso: ${item.weight}</li>
+        <li>Esporte: ${item.sport}</li>
+        <li>País: ${item.team}</li>
+        <li>Sigla: ${item.noc}</li>
+        <li>Idade: ${item.age}</li>
+        <li>Categoria: ${item.event}</li>
+        <li>Medalha: ${item.medal}</li>
+        
+        </ul>
+    
+    </div>`)
+
+const cardsContainer = document.querySelector(".card-container")
+cardsContainer.innerHTML = itensAraay
