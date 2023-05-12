@@ -58,16 +58,16 @@ const itensAraay = atletas.map (item => `
     
     <div class = "cards">
         <ul class="textoCards" style="listaStyle: none">
-        <li>Nome: ${item.name}</li>
-        <li>Gênero: ${item.gender}</li>
-        <li>Altura: ${item.height}</li>
-        <li>Peso: ${item.weight}</li>
-        <li>Esporte: ${item.sport}</li>
-        <li>País: ${item.team}</li>
-        <li>Sigla: ${item.noc}</li>
-        <li>Idade: ${item.age}</li>
-        <li>Categoria: ${item.event}</li>
-        <li>Medalha: ${item.medal}</li>
+        <li><strong>Nome:</strong><span> ${item.name}</span></li>
+        <li><strong>Gênero:</strong><span> ${item.gender}</span></li>
+        <li><strong>Altura:</strong><span> ${item.height}</span></li>
+        <li><strong>Peso: </strong><span> ${item.weight}</span></li>
+        <li><strong>Esporte:</strong><span> ${item.sport}</span></li>
+        <li><strong>País:</strong><span> ${item.team}</span></li>
+        <li><strong>Sigla:</strong><span> ${item.noc}</span></li>
+        <li><strong>Idade:</strong><span> ${item.age}</span></li>
+        <li><strong>Categoria:</strong><span> ${item.event}</span></li>
+        <li><strong>Medalha:</strong><span>${item.medal}</span></li>
         
         </ul>
     
