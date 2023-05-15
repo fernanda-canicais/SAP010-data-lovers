@@ -1,5 +1,5 @@
-//import { example } from './data.js';
-// import data from './data/lol/lol.js';
+import { ordemAtletas } from './data.js';
+
 import data from './data/athletes/athletes.js';
 
 const atletas = data.athletes //filtra atletas dentro do array
@@ -54,24 +54,39 @@ selecionarCategoria.innerHTML = modalidadesMenu // joga variável para o html
 
 //criando cards 
 
-const itensAraay = atletas.map (item => `
-    
-    <div class = "cards">
-        <ul class="textoCards" style="listaStyle: none">
-        <li><strong>Nome:</strong><span> ${item.name}</span></li>
-        <li><strong>Gênero:</strong><span> ${item.gender}</span></li>
-        <li><strong>Altura:</strong><span> ${item.height}</span></li>
-        <li><strong>Peso: </strong><span> ${item.weight}</span></li>
-        <li><strong>Esporte:</strong><span> ${item.sport}</span></li>
-        <li><strong>País:</strong><span> ${item.team}</span></li>
-        <li><strong>Sigla:</strong><span> ${item.noc}</span></li>
-        <li><strong>Idade:</strong><span> ${item.age}</span></li>
-        <li><strong>Categoria:</strong><span> ${item.event}</span></li>
-        <li><strong>Medalha:</strong><span>${item.medal}</span></li>
-        
-        </ul>
-    
-    </div>`)
+function dadosCards (array) {
 
-const cardsContainer = document.querySelector(".card-container")
-cardsContainer.innerHTML = itensAraay
+    const itensAraay = array.map (item =>
+    
+        `<div class = "cards">
+            <ul class="textoCards" style="listaStyle: none">
+            <li><strong>Nome:</strong><span> ${item.name}</span></li>
+            <li><strong>Gênero:</strong><span> ${item.gender}</span></li>
+            <li><strong>Altura:</strong><span> ${item.height}</span></li>
+            <li><strong>Peso: </strong><span> ${item.weight}</span></li>
+            <li><strong>Esporte:</strong><span> ${item.sport}</span></li>
+            <li><strong>País:</strong><span> ${item.team}</span></li>
+            <li><strong>Sigla:</strong><span> ${item.noc}</span></li>
+            <li><strong>Idade:</strong><span> ${item.age}</span></li>
+            <li><strong>Categoria:</strong><span> ${item.event}</span></li>
+            <li><strong>Medalha:</strong><span>${item.medal}</span></li>
+            
+            </ul>
+        
+        </div>`)
+
+
+    const cardsContainer = document.querySelector(".card-container")
+    cardsContainer.innerHTML = itensAraay.join(" ")
+
+}
+
+dadosCards(atletas)
+
+
+    const ordemAlfabetica = document.getElementById("selecionar-ordem");
+    ordemAlfabetica.addEventListener("change", () => {
+            const atletasOrdem = ordemAtletas(atletas, ordemAlfabetica.value);
+            dadosCards(atletasOrdem);
+        
+        });
