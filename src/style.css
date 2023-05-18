@@ -15,7 +15,7 @@ body{
     gap: 24px;
     overflow-x: hidden;
     
-    position: absolute;
+    position: absolute; /*absolute pode ferrar na hora de tornar responsivo ver para mudar*/
     width: 1440px;
     height: 891px;
     left: 0px;

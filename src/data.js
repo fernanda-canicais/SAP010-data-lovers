@@ -22,6 +22,11 @@ const ordemCrescente = (dados) => dados.sort((atleta_a, atleta_b) =>
 const ordemDecrescente = (dados) => dados.sort((atleta_a, atleta_b) => 
   atleta_b.name.localeCompare(atleta_a.name)
 )
-  
+
+export function filtroMedalhas(dados, key, value){
+  const filtrar = dados.filter((medal) => medal[key] === value);
+  return filtrar;
+}
+
 
 
