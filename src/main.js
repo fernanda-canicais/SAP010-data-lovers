@@ -6,9 +6,9 @@ const atletas = data.athletes //filtra atletas dentro do array
 
 //menu esportes:
 const esportes = atletas.map(modalidades => modalidades.sport) //filtra modalidade esportes dentro do array atletas
-const esportesFiltrados = new Set()  //filtra os esportes repetidos
-esportes.forEach((esporte) => {
-    esportesFiltrados.add(esporte) 
+
+const esportesFiltrados = esportes.filter((esporte, index) => {
+  return esportes.indexOf(esporte) === index
 })
 
 const esportesMenuArray = [...esportesFiltrados].sort() //converte 'seet' em array e coloca em ordem alfabetica
@@ -22,9 +22,9 @@ selecionarEsporte.innerHTML = esportesMenu //joga a variável para o html
 
 //menu de países
 const país = atletas.map(países => países.team)
-const paísesFiltrados = new Set()
-país.forEach((países) => {
-    paísesFiltrados.add(países)
+
+const paísesFiltrados = país.filter((países, index) => {
+  return países.indexOf(países) === index
 })
 
 const paísesMenuArray = [...paísesFiltrados].sort() // converte o 'seet' para array e ordena em ordem alfabetica
@@ -38,9 +38,8 @@ selecionarPaíses.innerHTML = paísesMenu //joga a variável para o html
 
 // menu de categorias
 const modalidade = atletas.map(estilo => estilo.event)
-const modalidadesFiltradas = new Set()
-modalidade.forEach((modalidades) => {
-    modalidadesFiltradas.add(modalidades)
+const modalidadesFiltradas = modalidade.filter((modalidade, index) =>{
+  return modalidade.indexOf(modalidade) === index
 })
 
 const modalidadesMenuArray = [...modalidadesFiltradas].sort() //converte o 'seet' para array e ordena em ordem alfabetica
@@ -56,9 +55,9 @@ selecionarCategoria.innerHTML = modalidadesMenu // joga variável para o html
 
 function dadosCards (array) {
 
-    const itensAraay = array.map (item =>
+  const itensAraay = array.map (item =>
     
-        `<div class = "cards">
+    `<div class = "cards">
             <ul class="textoCards" style="listaStyle: none">
             <li><strong>Nome:</strong><span> ${item.name}</span></li>
             <li><strong>Gênero:</strong><span> ${item.gender}</span></li>
@@ -73,20 +72,20 @@ function dadosCards (array) {
             
             </ul>
         
-        </div>`)
+    </div>`)
 
 
-    const cardsContainer = document.querySelector(".card-container")
-    cardsContainer.innerHTML = itensAraay.join(" ")
+  const cardsContainer = document.querySelector(".card-container")
+  cardsContainer.innerHTML = itensAraay.join("")
 
 }
 
 dadosCards(atletas)
 
 
-    const ordemAlfabetica = document.getElementById("selecionar-ordem");
-    ordemAlfabetica.addEventListener("change", () => {
-            const atletasOrdem = ordemAtletas(atletas, ordemAlfabetica.value);
-            dadosCards(atletasOrdem);
+const ordemAlfabetica = document.getElementById("selecionar-ordem");
+ordemAlfabetica.addEventListener("change", () => {
+  const atletasOrdem = ordemAtletas(atletas, ordemAlfabetica.value);
+  dadosCards(atletasOrdem);
         
-        });
+});
