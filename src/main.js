@@ -1,4 +1,4 @@
-import { ordemAtletas, filtroMedalhas } from './data.js';
+import { ordemAtletas, filtroMedalhas, filtroGenero } from './data.js';
 
 import data from './data/athletes/athletes.js';
 
@@ -84,6 +84,12 @@ ordemAlfabetica.addEventListener("change", () => {
 
 const ordemMedalhas = document.getElementById("selecionar-medalhas");
 ordemMedalhas.addEventListener("change", () => {
-  const filtro = filtroMedalhas(atletas, "medal", ordemMedalhas.value);
+  const filtro = filtroMedalhas(atletas, ordemMedalhas.value);
   dadosCards(filtro);
+});
+
+const ordemGenero = document.getElementById("selecionar-genero");
+ordemGenero.addEventListener("change", () => {
+  const generoFiltro = filtroGenero(atletas, ordemGenero.value);
+  dadosCards(generoFiltro);
 });
