@@ -55,23 +55,16 @@ selecionarCategoria.innerHTML = modalidadesMenu // joga variável para o html
 //criando cards 
 
 const itensAraay = atletas.map (item => `
+        <div class="cardsAtletas" id="cardsAtletas">
+                
+                    </ul>
+                </div>
+           
+            </div>
     
-    <div class = "cards">
-        <ul class="textoCards" style="listaStyle: none">
-        <li><strong>Nome:</strong><span> ${item.name}</span></li>
-        <li><strong>Gênero:</strong><span> ${item.gender}</span></li>
-        <li><strong>Altura:</strong><span> ${item.height}</span></li>
-        <li><strong>Peso: </strong><span> ${item.weight}</span></li>
-        <li><strong>Esporte:</strong><span> ${item.sport}</span></li>
-        <li><strong>País:</strong><span> ${item.team}</span></li>
-        <li><strong>Sigla:</strong><span> ${item.noc}</span></li>
-        <li><strong>Idade:</strong><span> ${item.age}</span></li>
-        <li><strong>Categoria:</strong><span> ${item.event}</span></li>
-        <li><strong>Medalha:</strong><span>${item.medal}</span></li>
-        
-        </ul>
-    
-    </div>`)
+        </div>`)
 
 const cardsContainer = document.querySelector(".card-container")
 cardsContainer.innerHTML = itensAraay
+
+
