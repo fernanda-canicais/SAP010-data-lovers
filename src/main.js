@@ -48,34 +48,25 @@ selecionarCategoria.innerHTML = modalidadesMenu.join(" ") // joga variável para
 
 //criando cards 
 
-const itensAraay = atletas.map (item => `
-        <div class="cardsAtletas" id="cardsAtletas">
-                <div class="cardFrente">
-                    <li><strong>Nome:</strong><span> ${item.name}</span></li>
-                </div> 
-            
-
-                <div class = "cards">
-                    <ul class="textoCards" style="listaStyle: none">
-                    <li><strong>Gênero:</strong><span> ${item.gender}</span></li>
-                    <li><strong>Altura:</strong><span> ${item.height}</span></li>
-                    <li><strong>Peso: </strong><span> ${item.weight}</span></li>
-                    <li><strong>Esporte:</strong><span> ${item.sport}</span></li>
-                    <li><strong>País:</strong><span> ${item.team}</span></li>
-                    <li><strong>Sigla:</strong><span> ${item.noc}</span></li>
-                    <li><strong>Idade:</strong><span> ${item.age}</span></li>
-                    <li><strong>Categoria:</strong><span> ${item.event}</span></li>
-                    <li><strong>Medalha:</strong><span>${item.medal}</span></li>
-                
-                    </ul>
-                </div>
-           
-            </div>
+function dadosCards (array) {
+  const itensArray = array.map (item =>
     
-        </div>`)
-
-const cardsContainer = document.querySelector(".card-container")
-cardsContainer.innerHTML = itensAraay
+    `<div class = "cards">
+            <ul class="textoCards" style="listaStyle: none">
+            <li><strong>Nome:</strong><span> ${item.name}</span></li>
+            <li><strong>Gênero:</strong><span> ${item.gender}</span></li>
+            <li><strong>Altura:</strong><span> ${item.height}</span></li>
+            <li><strong>Peso: </strong><span> ${item.weight}</span></li>
+            <li><strong>Esporte:</strong><span> ${item.sport}</span></li>
+            <li><strong>País:</strong><span> ${item.team}</span></li>
+            <li><strong>Sigla:</strong><span> ${item.noc}</span></li>
+            <li><strong>Idade:</strong><span> ${item.age}</span></li>
+            <li><strong>Categoria:</strong><span> ${item.event}</span></li>
+            <li><strong>Medalha:</strong><span>${item.medal}</span></li>
+            
+            </ul>
+        
+    </div>`)
 
 
 
