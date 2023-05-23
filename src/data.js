@@ -8,7 +8,12 @@ export const anotherExample = () => {
   return 'OMG';
 };*/
 
-//Ordenar de A-Z e Z-A
+
+
+
+
+
+
 export const ordemAtletas = (dados, selecionado) => {
   if(selecionado === "AZ"){
     return ordemCrescente(dados)
@@ -16,23 +21,40 @@ export const ordemAtletas = (dados, selecionado) => {
   else(selecionado === "ZA")
   return ordemDecrescente(dados)}
 
-const ordemCrescente = (dados) => dados.sort((atleta_a, atleta_b) => 
+export const ordemCrescente = (dados) => dados.sort((atleta_a, atleta_b) => 
   atleta_a.name.localeCompare(atleta_b.name)
 )
 
-const ordemDecrescente = (dados) => dados.sort((atleta_a, atleta_b) => 
+export const ordemDecrescente = (dados) => dados.sort((atleta_a, atleta_b) => 
   atleta_b.name.localeCompare(atleta_a.name)
 )
 
-// Filtrar por Medalhas
+
 export function filtroMedalhas(dados, medal){
   const filtrarMedalhas = dados.filter((item) => item["medal"] === medal);
   return filtrarMedalhas;
 }
 
-// Filtrar por Genero
+
 export function filtroGenero(dados, gender){
   const filtrarGenero = dados.filter((item) => item["gender"] === gender);
   return filtrarGenero;
 }
 
+
+export function filtroPaíses(dados, team){
+  const filtrarPaíses = dados.filter((item)=> item ["team"] === team);
+  return filtrarPaíses;
+}
+
+
+export function filtroEsportes(dados, sport){
+  const filtrarEsporte = dados.filter((item)=> item["sport"] === sport);
+  return filtrarEsporte;
+}
+
+
+export function filtroCategoria(dados, event) {
+  const filtrarCategoria = dados.filter((item)=> item ["event"] === event);
+  return filtrarCategoria;
+}

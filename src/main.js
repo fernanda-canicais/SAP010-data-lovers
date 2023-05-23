@@ -1,4 +1,4 @@
-import { ordemAtletas, filtroMedalhas, filtroGenero } from './data.js';
+import { ordemAtletas, filtroMedalhas, filtroGenero, filtroPaíses,filtroEsportes, filtroCategoria } from './data.js';
 
 import data from './data/athletes/athletes.js';
 
@@ -95,3 +95,22 @@ ordemGenero.addEventListener("change", () => {
   const generoFiltro = filtroGenero(atletas, ordemGenero.value);
   dadosCards(generoFiltro);
 });
+
+const ordemPaíses = document.getElementById("selecionar-país");
+ordemPaíses.addEventListener("change", () => {
+  const paísesFiltro = filtroPaíses(atletas, ordemPaíses.value);
+  dadosCards(paísesFiltro);
+});
+
+const ordemEsportes = document.getElementById("selecionar-esporte");
+ordemEsportes.addEventListener("change",() => {
+  const esportesFiltro = filtroEsportes(atletas, ordemEsportes.value);
+  dadosCards(esportesFiltro);
+});
+
+const ordemCategoria = document.getElementById("selecionar-categoria");
+ordemCategoria.addEventListener("change", () => {
+  const categoriaFiltro = filtroCategoria(atletas, ordemCategoria.value);
+  dadosCards(categoriaFiltro);
+});
+
