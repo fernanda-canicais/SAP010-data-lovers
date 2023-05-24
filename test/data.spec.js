@@ -60,9 +60,7 @@ describe('ordemAtletas', () => {
   });
 });
 
-
-
-
+ 
 describe('filtroMedalhas', () => {
 
   it('é uma função', () => {

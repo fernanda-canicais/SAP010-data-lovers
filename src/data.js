@@ -1,14 +1,3 @@
-// estas funciones son de ejemplo
-
-/*export const example = () => {
-  return 'example';
-};
-
-export const anotherExample = () => {
-  return 'OMG';
-};*/
-
-
 
 
 
@@ -57,4 +46,8 @@ export function filtroEsportes(dados, sport){
 export function filtroCategoria(dados, event) {
   const filtrarCategoria = dados.filter((item)=> item ["event"] === event);
   return filtrarCategoria;
+}
+
+export function calcularPorcentagem(tamanhoLista, tamanhoListaFiltrada) {
+  return Math.round((tamanhoListaFiltrada*100)/tamanhoLista);
 }
