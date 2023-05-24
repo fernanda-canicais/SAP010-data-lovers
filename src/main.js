@@ -1,9 +1,8 @@
-import { ordemAtletas, filtroMedalhas, filtroGenero, filtroPaíses,filtroEsportes, filtroCategoria, calcularPorcentagem } from './data.js';
+import { ordemAtletas, filtroMedalhas, filtroGenero } from './data.js';
 
 import data from './data/athletes/athletes.js';
 
 const atletas = data.athletes //busca atletas dentro do array
-const porcentagem = document.querySelector(".porcentagem")
 
 
 //menu esportes:
@@ -70,8 +69,6 @@ function dadosCards (array) {
     </div>`)
 
 
-
-
   const cardsContainer = document.querySelector(".card-container")
   cardsContainer.innerHTML = itensArray.join("")
 }
@@ -89,48 +86,10 @@ const ordemMedalhas = document.getElementById("selecionar-medalhas");
 ordemMedalhas.addEventListener("change", () => {
   const filtro = filtroMedalhas(atletas, ordemMedalhas.value);
   dadosCards(filtro);
-
-  const percentual = calcularPorcentagem(atletas.length, filtro.length);
-  porcentagem.innerHTML= "Essa categoria contém " + percentual + "% das medalhas nas Olimpíadas";
-
 });
 
 const ordemGenero = document.getElementById("selecionar-genero");
 ordemGenero.addEventListener("change", () => {
   const generoFiltro = filtroGenero(atletas, ordemGenero.value);
   dadosCards(generoFiltro);
-
-  const percentual = calcularPorcentagem(atletas.length, generoFiltro.length);
-  porcentagem.innerHTML= "Esse gênero contém " + percentual + "% nas Olimpíadas";
-
 });
-
-const ordemPaíses = document.getElementById("selecionar-país");
-ordemPaíses.addEventListener("change", () => {
-  const paísesFiltro = filtroPaíses(atletas, ordemPaíses.value);
-  dadosCards(paísesFiltro);
-
-  const percentual = calcularPorcentagem(atletas.length, paísesFiltro.length);
-  porcentagem.innerHTML= "Esse país contém " + percentual + "% dos atletas nas Olimpíadas";
-
-});
-
-const ordemEsportes = document.getElementById("selecionar-esporte");
-ordemEsportes.addEventListener("change",() => {
-  const esportesFiltro = filtroEsportes(atletas, ordemEsportes.value);
-  dadosCards(esportesFiltro);
-
-  const percentual = calcularPorcentagem(atletas.length, ordemEsportes.length);
-  porcentagem.innerHTML= "Esse esporte contém " + percentual + "% das Olimpíadas";
-});
-
-const ordemCategoria = document.getElementById("selecionar-categoria");
-ordemCategoria.addEventListener("change", () => {
-  const categoriaFiltro = filtroCategoria(atletas, ordemCategoria.value);
-  dadosCards(categoriaFiltro);
- 
-  const percentual = calcularPorcentagem(atletas.length, categoriaFiltro.length);
-  porcentagem.innerHTML= "Essa categoria contém " + percentual + "% das Olimpíadas";
-
-});
-
