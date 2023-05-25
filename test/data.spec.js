@@ -1,4 +1,4 @@
-import { ordemAtletas, filtroMedalhas } from '../src/data.js';
+import { filtroMedalhas, ordemAtletas, filtroGenero, filtroPaíses, filtroEsportes, filtroCategoria, calcularPorcentagem } from '../src/data.js';
 
 const arrayTest = [
 
@@ -68,26 +68,76 @@ describe('filtroMedalhas', () => {
   });
 
   it('filtrar por medalhas', () => {
-    const medalhaEsperada = filtroMedalhas(arrayTest, "medal", "Bronze")
+    const medalhaEsperada = filtroMedalhas(arrayTest, "Bronze")
     expect (medalhaEsperada.length).toEqual(1);
     expect(medalhaEsperada).toEqual([arrayTest[0]]);
   });
 });
 
+describe ('filtroGenero', () => {
 
+  it('é uma função', () => {
+    expect(typeof filtroGenero).toBe("function");
+  });
 
-/*it('returns `example`', () => {
-    expect(example()).toBe('example');
+  it('filtrar por genero', () => {
+    const generoEsperado = filtroGenero(arrayTest, "F")
+    expect (generoEsperado.length).toEqual(2);
+    expect(generoEsperado).toEqual([arrayTest[1], arrayTest[3]]);
+
+  });
+});
+
+describe ('filtroPaíses', () => {
+
+  it('é uma função', ()=> {
+    expect(typeof filtroPaíses).toBe("function");
+  });
+
+  it('filtrar por país', () => {
+    const paísEsperado = filtroPaíses(arrayTest, "Netherlands")
+    expect (paísEsperado.length).toEqual(1);
+    expect(paísEsperado).toEqual([arrayTest[3]]);
+  });
+});
+ 
+describe ('filtroEsportes', () => {
+
+  it ('é uma função', () => {
+    expect(typeof filtroEsportes).toBe("function");
+  });
+
+  it('filtrar por esporte', () => {
+    const esporteEsperado = filtroEsportes(arrayTest,"Taekwondo" )
+    expect (esporteEsperado.length).toEqual(1);
+    expect(esporteEsperado).toEqual([arrayTest[2]]);
+  });
+});
+
+describe ('filtroCategoria', () => {
+
+  it ('é uma função', () => {
+    expect(typeof filtroCategoria).toBe("function");
+  });
+
+  it('filtrar por categoria', () => {
+    const categoriaEsperada = filtroCategoria(arrayTest,"Rowing Women's Quadruple Sculls")
+    expect (categoriaEsperada.length).toEqual(1);
+    expect(categoriaEsperada).toEqual([arrayTest[3]]);
+  });
+});
+
+describe ('calcularPorcentagem', () => {
+
+  it ('é uma função', () => {
+    expect(typeof calcularPorcentagem).toBe("function");
+  });
+  
+  it('calcular média de medalhas de prata', () => {
+    const media = calcularPorcentagem(arrayTest.length, 2);
+    expect(media).toEqual(50);
   });
 });
 
 
-describe('anotherExample', () => {
-  it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
-  });
 
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
-  });
-});*/
