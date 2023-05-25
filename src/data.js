@@ -4,11 +4,12 @@
 
 
 export const ordemAtletas = (dados, selecionado) => {
+  const copia = [...dados]
   if(selecionado === "AZ"){
-    return ordemCrescente(dados)
+    return ordemCrescente(copia)
   }
   else(selecionado === "ZA")
-  return ordemDecrescente(dados)}
+  return ordemDecrescente(copia)}
 
 export const ordemCrescente = (dados) => dados.sort((atleta_a, atleta_b) => 
   atleta_a.name.localeCompare(atleta_b.name)
