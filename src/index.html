@@ -1,76 +1,40 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Lovers Olimpiadas 2016 - Atualizado com sucesso!</title>
-    <link rel="stylesheet" href="style.css" />
-  </head> 
-  
-  <body>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vila Olímpica Digital</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
   <header>
-    
-    <h1>Bem vindo a Vila Olímpica Digital</h1>
-  
-    <h2>Acompanhe como foi a trajetória dos atletas Rio 2016</h2>
+    <h1 class="texto-header"> Sejam bem-vindos(as) a Vila Olimpica Digital!</h1>
   </header>
   
-  
   <main>
-  <div class="ordenar-container">
-    <label>
-      <select  id="selecionar-ordem" class="btn-ordem">
-      <option value="" selected disabled hidden>Ordenar</option>
-      <option value="AZ">A-Z</option>
-      <option value="ZA">Z-A</option>
-      </select>
-    </label>
-    <label>
-      <select id="selecionar-medalhas" class="btn-ordem">
-        <option value="" selected disabled hidden>Medalhas</option>
-        <option value="Gold">Ouro</option>
-        <option value="Silver">Prata</option>
-        <option value="Bronze">Bronze</option>
-      </select>
-    </label>
-    <label>
-      <select id="selecionar-genero" class="btn-ordem">
-        <option value="" selected disabled hidden>Gênero</option>
-        <option value="M">Masculino</option>
-        <option value="F">Feminino</option>
-      </select>
-    </label>
-    
-    <label>
-      <select id="selecionar-país" class="selecionar-país">
-       
-      </select>
-    </label>
-      
-    <label>
-      <select id="selecionar-esporte" class="selecionar-esporte">
-        
-      </select>
-    </label>
-    <label>
-      <select id="selecionar-categoria" class="selecionar-categoria">
-   
-      </select>
-    </label>
-  </div>
-  <div class="porcentagem-container"  id="porcentagem-container">
-     <b>
-      <p class="porcentagem" id="porcentagem"></p>
-     </b>
+    <section class="texto">
+      <p>Acompanhe como foi a trajetória dos atletas Rio 2016 e pesquise por seu esporte, atleta ou país preferido.</p>
+    </section>
 
-  </div>
+    <nav class="comecar">
+      <a href="paginainicial.html"><button class="btn-header">COMEÇAR</button></a>
+    </nav>
 
-  <div class="card-container" id="card-container">
-  </div>
-    
-       
-    <div id="root"></div>
-    <script src="main.js" type="module"></script>
-</main>
+  </main>
+
+  <footer>
+
+    <p>Desenvolvido   por  
+      <a href="https://github.com/fernanda-canicais">
+      <span class="nome">  Fernanda Caniçais</span>
+      </a>
+        e 
+      <a href="https://github.com/PamelaBrsa">
+      <span class="nome">  Pamela Barbosa</span>
+      </a>
+    </p>
+  </footer>
 </body>
 </html>
