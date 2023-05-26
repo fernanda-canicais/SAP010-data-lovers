@@ -52,22 +52,33 @@ selecionarCategoria.innerHTML = modalidadesMenu.join(" ") // joga variável para
 function dadosCards (array) {
   const itensArray = array.map (item =>
     
-    `<div class = "cards">
-            <ul class="textoCards" style="listaStyle: none">
-            <li><strong>Nome:</strong><span> ${item.name}</span></li>
-            <li><strong>Gênero:</strong><span> ${item.gender}</span></li>
-            <li><strong>Altura:</strong><span> ${item.height}</span></li>
-            <li><strong>Peso: </strong><span> ${item.weight}</span></li>
-            <li><strong>Esporte:</strong><span> ${item.sport}</span></li>
-            <li><strong>País:</strong><span> ${item.team}</span></li>
-            <li><strong>Sigla:</strong><span> ${item.noc}</span></li>
-            <li><strong>Idade:</strong><span> ${item.age}</span></li>
-            <li><strong>Categoria:</strong><span> ${item.event}</span></li>
-            <li><strong>Medalha:</strong><span>${item.medal}</span></li>
-            
-            </ul>
-        
-    </div>`)
+    `<div class="cards-ateltas" id="cards-atletas">
+         <div class="cards-flip">
+              <div class ="card-frente">
+                <ul class="textoCards1" style="listaStyle: none">
+                <li><strong>Nome:</strong><span> ${item.name}</span></li>
+                </ul>
+              </div>    
+              <div class = "card-verso">
+                      <ul class="textoCards" style="listaStyle: none">
+                      <li><strong>Gênero:</strong><span> ${item.gender}</span></li>
+                      <li><strong>Altura:</strong><span> ${item.height}</span></li>
+                      <li><strong>Peso: </strong><span> ${item.weight}</span></li>
+                      <li><strong>Esporte:</strong><span> ${item.sport}</span></li>
+                      <li><strong>País:</strong><span> ${item.team}</span></li>
+                      <li><strong>Sigla:</strong><span> ${item.noc}</span></li>
+                      <li><strong>Idade:</strong><span> ${item.age}</span></li>
+                      <li><strong>Categoria:</strong><span> ${item.event}</span></li>
+                      <li><strong>Medalha:</strong><span>${item.medal}</span></li>
+                      
+                      </ul>
+                
+              </div>
+          </div>    
+      </div>
+    `
+    
+    )
 
 
 
@@ -104,6 +115,7 @@ ordemGenero.addEventListener("change", () => {
   porcentagem.innerHTML= "Esse gênero contém " + percentual + "% nas Olimpíadas";
 
 });
+
 
 const ordemPaíses = document.getElementById("selecionar-país");
 ordemPaíses.addEventListener("change", () => {

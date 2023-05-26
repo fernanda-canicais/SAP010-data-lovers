@@ -98,6 +98,16 @@ h2{
     flex: none; 
 }
 
+.btn-ordem:hover,
+.selecionar-país:hover,
+.selecionar-esporte:hover,
+.selecionar-categoria:hover
+
+{
+    filter: brightness(0.8);
+}
+
+
 .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -129,6 +139,55 @@ h2{
     color: #000000;
     
 }
+
+.textoCards1{
+    display: inline-block;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3.7rem;
+            
+    width: 90%;
+    max-width: 185px;
+    height:168px;  
+    border-radius: 8px;
+ 
+    z-index: 0;
+    background: url("imagens/cardfrente.jpg");
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 16px;
+    color: #000000;
+    
+
+}
+
+
+
+.card-frente {
+    position: absolute;
+    backface-visibility: hidden;
+    
+   
+}
+
+.cards-ateltas:hover .card-frente {
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+    
+}
+
+.cards-flip {
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+}
+
+   
+    
+
+
 
 @media screen and (max-width: 450px) {
 
