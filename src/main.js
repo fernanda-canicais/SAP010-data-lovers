@@ -51,22 +51,33 @@ selecionarCategoria.innerHTML = modalidadesMenu.join(" ") // joga variável para
 function dadosCards (array) {
   const itensArray = array.map (item =>
     
-    `<div class = "cards">
-            <ul class="textoCards" style="listaStyle: none">
-            <li><strong>Nome:</strong><span> ${item.name}</span></li>
-            <li><strong>Gênero:</strong><span> ${item.gender}</span></li>
-            <li><strong>Altura:</strong><span> ${item.height}</span></li>
-            <li><strong>Peso: </strong><span> ${item.weight}</span></li>
-            <li><strong>Esporte:</strong><span> ${item.sport}</span></li>
-            <li><strong>País:</strong><span> ${item.team}</span></li>
-            <li><strong>Sigla:</strong><span> ${item.noc}</span></li>
-            <li><strong>Idade:</strong><span> ${item.age}</span></li>
-            <li><strong>Categoria:</strong><span> ${item.event}</span></li>
-            <li><strong>Medalha:</strong><span>${item.medal}</span></li>
-            
-            </ul>
-        
-    </div>`)
+    `<div class="cards-ateltas" id="cards-atletas">
+         <div class="cards-flip">
+              <div class ="card-frente">
+                <ul class="textoCards1" style="listaStyle: none">
+                <li><strong>Nome:</strong><span> ${item.name}</span></li>
+                </ul>
+              </div>    
+              <div class = "card-verso">
+                      <ul class="textoCards" style="listaStyle: none">
+                      <li><strong>Gênero:</strong><span> ${item.gender}</span></li>
+                      <li><strong>Altura:</strong><span> ${item.height}</span></li>
+                      <li><strong>Peso: </strong><span> ${item.weight}</span></li>
+                      <li><strong>Esporte:</strong><span> ${item.sport}</span></li>
+                      <li><strong>País:</strong><span> ${item.team}</span></li>
+                      <li><strong>Sigla:</strong><span> ${item.noc}</span></li>
+                      <li><strong>Idade:</strong><span> ${item.age}</span></li>
+                      <li><strong>Categoria:</strong><span> ${item.event}</span></li>
+                      <li><strong>Medalha:</strong><span>${item.medal}</span></li>
+                      
+                      </ul>
+                
+              </div>
+          </div>    
+      </div>
+    `
+    
+    )
 
 
   const cardsContainer = document.querySelector(".card-container")
@@ -92,4 +103,43 @@ const ordemGenero = document.getElementById("selecionar-genero");
 ordemGenero.addEventListener("change", () => {
   const generoFiltro = filtroGenero(atletas, ordemGenero.value);
   dadosCards(generoFiltro);
+<<<<<<< HEAD
 });
+=======
+
+  const percentual = calcularPorcentagem(atletas.length, generoFiltro.length);
+  porcentagem.innerHTML= "Esse gênero contém " + percentual + "% nas Olimpíadas";
+
+});
+
+
+const ordemPaíses = document.getElementById("selecionar-país");
+ordemPaíses.addEventListener("change", () => {
+  const paísesFiltro = filtroPaíses(atletas, ordemPaíses.value);
+  dadosCards(paísesFiltro);
+
+  const percentual = calcularPorcentagem(atletas.length, paísesFiltro.length);
+  porcentagem.innerHTML= "Esse país contém " + percentual + "% dos atletas nas Olimpíadas";
+
+});
+
+const ordemEsportes = document.getElementById("selecionar-esporte");
+ordemEsportes.addEventListener("change",() => {
+  const esportesFiltro = filtroEsportes(atletas, ordemEsportes.value);
+  dadosCards(esportesFiltro);
+
+  const percentual = calcularPorcentagem(atletas.length, ordemEsportes.length);
+  porcentagem.innerHTML= "Esse esporte contém " + percentual + "% das Olimpíadas";
+});
+
+const ordemCategoria = document.getElementById("selecionar-categoria");
+ordemCategoria.addEventListener("change", () => {
+  const categoriaFiltro = filtroCategoria(atletas, ordemCategoria.value);
+  dadosCards(categoriaFiltro);
+ 
+  const percentual = calcularPorcentagem(atletas.length, categoriaFiltro.length);
+  porcentagem.innerHTML= "Essa categoria contém " + percentual + "% das Olimpíadas";
+
+});
+
+>>>>>>> 517232caf8a29301b3327c68903a687419c1537c
