@@ -1,0 +1,223 @@
+body{
+    display: inline-block;
+    align-items: flex-start;
+    gap: 24px;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+        
+}
+header{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 2rem 2rem;
+    width: 100%;
+    background: url(./imagens/Rio2016.jpg);
+    
+}
+h1{    
+    width: 90%;
+    max-width:1296px;
+    height: 28px;
+    padding: 2rem 3rem 1rem;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.5rem;
+    line-height: 2.7rem;
+    text-align: center;
+    color: #1C1717;
+    margin: 0 auto;
+    text-shadow: 2px 1px white;
+    
+}
+
+
+h2{    
+    width: 90%;
+    max-width: 1296px;
+    height: 28px;    
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.7rem;
+    text-align: center;
+    color:#1C1717;
+    margin: 0 auto;
+}
+
+.ordenar-container{
+    display: inline-block;
+    align-items:center;
+    padding: 2rem 2rem 2rem 7rem;
+    width: 100%;
+    height: 96px;
+    box-sizing: border-box;
+    border-width: 1px 0px;
+    border-style: solid;
+    border-color: #D7D7D7;
+}
+
+.porcentagem{
+
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    color: #185A17;    
+}
+
+.btn-ordem,
+.selecionar-país,
+.selecionar-esporte,
+.selecionar-categoria{
+  
+    display: inline-block;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 1rem;
+    width: 200px;
+    height: 38px;
+
+    background: #185A17;
+    border-radius: 100px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;    
+    flex: none; 
+}
+
+.btn-ordem:hover,
+.selecionar-país:hover,
+.selecionar-esporte:hover,
+.selecionar-categoria:hover {
+
+    filter: brightness(0.8);
+}
+
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.textoCards {
+    display: inline-block;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3.7rem;
+            
+    width: 90%;
+    max-width: 185px;
+    height:168px;  
+    border-radius: 8px;
+ 
+    z-index: 0;
+    background: url("imagens/imagemVerso.jpg");
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+}
+
+.textoCards1{
+    display: inline-block;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3.7rem;
+            
+    width: 90%;
+    max-width: 185px;
+    height:168px;  
+    border-radius: 8px;
+ 
+    z-index: 0;
+    background: url("imagens/cardfrente.jpg");
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 16px;
+    color: black;
+    text-shadow: 2px 1px white;
+   
+}
+
+.card-frente {
+    position: absolute;
+    backface-visibility: hidden;
+         
+}
+.card-verso {
+    backface-visibility: hidden;
+}
+
+.cards-atletas:hover .card-frente {
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+    transition: transform 100ms linear; 
+}
+
+.cards-flip {
+    transform-style: preserve-3d;
+    
+}
+.cards-atletas:hover .card-verso {
+    transform: rotateY(360deg);
+    transition: transform 500ms linear;
+
+}
+   
+    
+
+@media screen and (max-width: 450px) {
+
+    .ordenar-container{
+        display: inline-block;
+        align-items:center;
+        padding: 2rem 2rem 2rem 7rem;        
+        border-width: 0px 0px;
+        border-color: #FFF
+    }
+
+    h1 {
+        font-size:1.1em;
+        margin-bottom: 0.5em
+    }
+
+    h2 {
+        font-size:1.0em;
+        margin-bottom: 0.5em
+    }
+
+    .card-container {
+                
+        padding: 1rem 4rem 0rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .header{
+        background-size: 100%;
+    }
+}
