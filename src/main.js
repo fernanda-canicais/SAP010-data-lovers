@@ -52,7 +52,7 @@ selecionarCategoria.innerHTML = modalidadesMenu.join(" ") // joga variável para
 function dadosCards (array) {
   const itensArray = array.map (item =>
     
-    `<div class="cards-ateltas" id="cards-atletas">
+    `<div class="cards-atletas" id="cards-atletas">
          <div class="cards-flip">
               <div class ="card-frente">
                 <ul class="textoCards1" style="listaStyle: none">
