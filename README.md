@@ -67,7 +67,7 @@ Tela de navegação:
 <br>
 Versão Mobile:
 
-![preview](src/imagens/versaomobile.jpeg)
+![preview](src/imagens/Responsivo.png)
 
 ## 5. Ferramentas utilizadas
 

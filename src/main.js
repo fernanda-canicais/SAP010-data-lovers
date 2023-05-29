@@ -1,8 +1,9 @@
-import { ordemAtletas, filtroMedalhas, filtroGenero } from './data.js';
+import { ordemAtletas, filtroMedalhas, filtroGenero, filtroPaíses,filtroEsportes, filtroCategoria, calcularPorcentagem } from './data.js';
 
 import data from './data/athletes/athletes.js';
 
 const atletas = data.athletes //busca atletas dentro do array
+const porcentagem = document.querySelector(".porcentagem")
 
 
 //menu esportes:
@@ -77,7 +78,9 @@ function dadosCards (array) {
       </div>
     `
     
-    )
+  )
+
+
 
 
   const cardsContainer = document.querySelector(".card-container")
@@ -97,15 +100,16 @@ const ordemMedalhas = document.getElementById("selecionar-medalhas");
 ordemMedalhas.addEventListener("change", () => {
   const filtro = filtroMedalhas(atletas, ordemMedalhas.value);
   dadosCards(filtro);
+
+  const percentual = calcularPorcentagem(atletas.length, filtro.length);
+  porcentagem.innerHTML= "Essa categoria contém " + percentual + "% das medalhas nas Olimpíadas";
+
 });
 
 const ordemGenero = document.getElementById("selecionar-genero");
 ordemGenero.addEventListener("change", () => {
   const generoFiltro = filtroGenero(atletas, ordemGenero.value);
   dadosCards(generoFiltro);
-<<<<<<< HEAD
-});
-=======
 
   const percentual = calcularPorcentagem(atletas.length, generoFiltro.length);
   porcentagem.innerHTML= "Esse gênero contém " + percentual + "% nas Olimpíadas";
@@ -141,5 +145,3 @@ ordemCategoria.addEventListener("change", () => {
   porcentagem.innerHTML= "Essa categoria contém " + percentual + "% das Olimpíadas";
 
 });
-
->>>>>>> 517232caf8a29301b3327c68903a687419c1537c
