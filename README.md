@@ -16,7 +16,7 @@
 
 Este projeto consiste em uma página web interativa que reúne informações sobre os Jogos Olímpicos de 2016, sediados no Rio de Janeiro, Brasil. Através de um banco de dados abrangente, os usuários podem filtrar informações sobre atletas, esportes, países e categorias de preferência, revivendo a trajetória dos medalhistas olímpicos. A página web possui uma interface intuitiva, recursos de filtragem personalizada e oferece informações detalhadas sobre os medalhistas, proporcionando uma experiência envolvente e interativa.
 
- Confira nosso projeto clicando nesse link -> 
+ Confira nosso projeto clicando nesse link -> [Projeto Olimpíadas Rio 2016](https://fernanda-canicais.github.io/SAP010-data-lovers/)
 
 
 ## 2. Desenvolvimento do projeto
