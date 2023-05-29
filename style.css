@@ -34,21 +34,6 @@ h1{
     
 }
 
-
-h2{    
-    width: 90%;
-    max-width: 1296px;
-    height: 28px;    
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 1.5rem;
-    line-height: 1.7rem;
-    text-align: center;
-    color:#1C1717;
-    margin: 0 auto;
-}
-
 .ordenar-container{
     display: inline-block;
     align-items:center;
@@ -202,14 +187,12 @@ h2{
 
     h1 {
         font-size:1.1em;
-        margin-bottom: 0.5em
+        margin-bottom: 0.5em;
+        padding: 1rem 1.5rem .5rem;
+        font-size: 1.5rem;
     }
 
-    h2 {
-        font-size:1.0em;
-        margin-bottom: 0.5em
-    }
-
+   
     .card-container {
                 
         padding: 1rem 4rem 0rem;
@@ -219,5 +202,10 @@ h2{
     }
     .header{
         background-size: 100%;
+    }
+    .porcentagem{
+        font-size: 12px;
+        padding: 1rem 1rem;
+        text-align: center;
     }
 }

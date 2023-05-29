@@ -78,7 +78,7 @@ function dadosCards (array) {
       </div>
     `
     
-    )
+  )
 
 
 
@@ -145,4 +145,3 @@ ordemCategoria.addEventListener("change", () => {
   porcentagem.innerHTML= "Essa categoria contém " + percentual + "% das Olimpíadas";
 
 });
-

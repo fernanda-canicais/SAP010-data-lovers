@@ -1,8 +1,3 @@
-
-
-
-
-
 export const ordemAtletas = (dados, selecionado) => {
   const copia = [...dados]
   if(selecionado === "AZ"){
